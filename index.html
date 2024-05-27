@@ -63,6 +63,10 @@
     <div id="displayArea">
         <!-- Dynamic content will be displayed here -->
     </div>
+	
+	<div id="counter-container">
+        <span id="counter">NR: 0</span>
+    </div>
 
     <script>
     function scrollToTop() {
@@ -138,12 +142,43 @@
 				<img src='ex4.jpeg' alt='Image for EX2'>
 				<img src='ex4_2.jpeg' alt='Image for EX2'>
             `;
-        }else {
+        }else if (exerciseNumber === 5) {
+    displayArea.innerHTML = `
+		<p>p1: K-MEANS</p>
+        <p>p1: Se aleg x centroide (în funcție de câte clase vrem să avem)</p>
+        <p>p2: Se calculează distanța de la fiecare centroid la fiecare punct</p>
+        <p>p3: Se observă ce puncte sunt apropiate de centroizi (în funcție de distanțe)</p>
+        <p>p4: Se completează vectorul iClass cu clasa specifică fiecărui punct</p>
+        <p>p5: Acum, în funcție de iClass, se calculează din nou centrele de greutate pentru fiecare clasă</p>
+        <p>p6: Dacă se modifică coordonatele cel puțin a unui centroid, se reia de la pasul 2</p>
+    `;
+}
+else {
             var imageName = 'image' + exerciseNumber + '.png'; 
             var textContent = 'Text for EX' + exerciseNumber;
             displayArea.innerHTML = '<img src="' + imageName + '" alt="Image for EX' + exerciseNumber + '"><p>' + textContent + '</p>';
         }
     }
+	var numarVizitatori = 0;
+
+        // Funcție pentru a incrementa contorul și a actualiza afișajul
+        function incrementCounter() {
+            numarVizitatori++;
+            updateCounterDisplay();
+        }
+
+        // Funcție pentru a actualiza afișajul contorului
+        function updateCounterDisplay() {
+            var counterElement = document.getElementById('counter');
+            if (counterElement) {
+                counterElement.textContent = 'NR: ' + numarVizitatori;
+            }
+        }
+
+        // Incrementați contorul la încărcarea paginii
+        window.onload = function() {
+            incrementCounter();
+        };
 </script>
 </body>
 </html>
