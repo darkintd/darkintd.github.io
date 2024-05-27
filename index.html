@@ -59,19 +59,19 @@
         <button onclick="displayContent(4)">EX4</button>
         <button onclick="displayContent(5)">EX5</button>
         <button onclick="scrollToTop()">^</button>
+		<button onclick="redirectToLink()">CR</button>
     </div>
     <div id="displayArea">
         <!-- Dynamic content will be displayed here -->
-    </div>
-	
-	<div id="counter-container">
-        <a href="https://codeshare.io/rfexam" target="_blank">Access CodeShare</a>
     </div>
 
     <script>
     function scrollToTop() {
         window.scrollTo({top: 0, behavior: 'smooth'});
     }
+	function redirectToLink() {
+            window.location.href = 'https://classroom.google.com';
+        }
     function displayContent(exerciseNumber) {
         var displayArea = document.getElementById('displayArea');
         if (exerciseNumber === 1) {
