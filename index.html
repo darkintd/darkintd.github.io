@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acasa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #000;
+        }
+        .button-container {
+            display: flex;
+            width: 100%;
+            justify-content: space-evenly;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        #displayArea {
+            text-align: center;
+            margin-top: 20px;
+            width: 100%;
+        }
+        table {
+            margin-top: 10px;
+            width: 100%;
+            border-collapse: collapse;
+        }
+        td, th {
+            border: 1px solid #ddd;
+            text-align: center;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <img src="frontimage.png" alt="Uploaded Image">
+    <div class="button-container">
+        <button onclick="displayContent(1)">EX1</button>
+        <button onclick="displayContent(2)">EX2</button>
+        <button onclick="displayContent(3)">EX3</button>
+        <button onclick="displayContent(4)">EX4</button>
+        <button onclick="displayContent(5)">EX5</button>
+        <button onclick="scrollToTop()">^</button>
+    </div>
+    <div id="displayArea">
+        <!-- Dynamic content will be displayed here -->
+    </div>
+
+    <script>
+    function scrollToTop() {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+    function displayContent(exerciseNumber) {
+        var displayArea = document.getElementById('displayArea');
+        if (exerciseNumber === 1) {
+            displayArea.innerHTML = `
+                <p>Fi e o mulțime de forme E = {x1, x2, x3, x4, x5}. Matricea distanțelor este următoarea:</p>
+                <table>
+                    <tr><td>0.00</td><td>2.00</td><td>4.47</td><td>5.66</td><td>7.81</td></tr>
+                    <tr><td>2.00</td><td>0.00</td><td>2.83</td><td>4.47</td><td>6.40</td></tr>
+                    <tr><td>4.47</td><td>2.83</td><td>0.00</td><td>2.00</td><td>3.61</td></tr>
+                    <tr><td>5.66</td><td>4.47</td><td>2.00</td><td>0.00</td><td>2.24</td></tr>
+                    <tr><td>7.81</td><td>6.40</td><td>3.61</td><td>2.24</td><td>0.00</td></tr>
+                </table>
+				<p>Determinați dendrograma formelor și precizați valoarea distanțelor ultrametrice dintre formele (x2, x3) și (x4, x1).</p>
+				<p>Answer: 2.83 2.83</p>
+                <img src='ex2.jpeg' alt='Image for EX1'>
+                <img src='ex1.jpeg' alt='Image for EX2'>`;
+        } else if (exerciseNumber === 2) {
+            displayArea.innerHTML = `
+                <p>Fi o mulțime de forme E = {x1, x2, x3, x4, x5, x6} și matricea (triunghiulară) a distanțelor:</p>
+                <table>
+                    <tr><td>0</td><td>11</td><td>33</td><td>5</td><td>14</td><td>41</td></tr>
+                    <tr><td></td><td>0</td><td>23</td><td>16</td><td>13</td><td>27</td></tr>
+                    <tr><td></td><td></td><td>0</td><td>36</td><td>43</td><td>39</td></tr>
+                    <tr><td></td><td></td><td></td><td>0</td><td>45</td><td>19</td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td>0</td><td>16</td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td><td>0</td></tr>
+                </table>
+                <p>Se cere:</p>
+                <ul>
+                    <li>determinați arborii sub-intină (parțial) de cost minim al grafului formelor; precizați raportul sub forma S = (N, A).</li>
+                    <li>determinați și de partitii...(P1)...(P6) care poate fi obținut pe baza arborilor sub-intină (parțială) de cost minim al grafului formelor;</li>
+                    <li>ultrametrica ce poate fi obținută.</li>
+                </ul>
+                <img src='ex1.jpeg' alt='Image for EX2'>
+                <img src='ex2_2.jpeg' alt='Image for EX3'>`;
+        } else if (exerciseNumber === 3) {
+            displayArea.innerHTML = `
+                <p>Fi următorul tabel de observații:</p>
+                <table>
+                    <tr><th>Nr.crt</th><th>X1</th><th>X2</th><th>Categoria</th></tr>
+                    <tr><td>1</td><td>5</td><td>1</td><td>A</td></tr>
+                    <tr><td>2</td><td>7</td><td>2</td><td>A</td></tr>
+                    <tr><td>3</td><td>1</td><td>3</td><td>B</td></tr>
+                    <tr><td>4</td><td>1</td><td>5</td><td>B</td></tr>
+                    <tr><td>5</td><td>2</td><td>4</td><td>B</td></tr>
+                    <tr><td>6</td><td>5</td><td>10</td><td>C</td></tr>
+                    <tr><td>7</td><td>7</td><td>7</td><td>C</td></tr>
+                </table>
+                <p>Să se determine la ce categorie aparține următoarea observație: (5, 12) aplicând regula kNN pentru k=1,3,5,7.</p>
+                <p>Answer: CCBB</p>
+				<img src='ex3.jpeg' alt='Image for EX2'>
+            `;
+        }else if (exerciseNumber === 4) {
+            displayArea.innerHTML = `
+                <p>Fi următorul tabel de observații:</p>
+                <table>
+                    <tr><th>Nr.crt</th><th>X1</th><th>X2</th><th>Clasa</th></tr>
+                    <tr><td>1</td><td>1</td><td>5</td><td>C1</td></tr>
+                    <tr><td>2</td><td>3</td><td>7</td><td>C1</td></tr>
+                    <tr><td>3</td><td>3</td><td>1</td><td>C2</td></tr>
+                    <tr><td>4</td><td>5</td><td>1</td><td>C2</td></tr>
+                    <tr><td>5</td><td>10</td><td>1</td><td>C3</td></tr>
+                    <tr><td>6</td><td>10</td><td>5</td><td>C3</td></tr>
+                    <tr><td>7</td><td>12</td><td>7</td><td>C3</td></tr>
+                </table>
+                <p>Utilizând funcțiile discriminant calculate cu algoritmul bazat pe distanța față de centrul de greutate (CLASA) determinați ecuația suprafeței de separație dintre clasa C2 și clasa C3.</p>
+				<p>Answer: -6,6 -3,3 57,69</p>
+				<img src='ex4.jpeg' alt='Image for EX2'>
+				<img src='ex4_2.jpeg' alt='Image for EX2'>
+            `;
+        }else {
+            var imageName = 'image' + exerciseNumber + '.png'; 
+            var textContent = 'Text for EX' + exerciseNumber;
+            displayArea.innerHTML = '<img src="' + imageName + '" alt="Image for EX' + exerciseNumber + '"><p>' + textContent + '</p>';
+        }
+    }
+</script>
+</body>
+</html>
