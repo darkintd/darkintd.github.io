@@ -65,7 +65,7 @@
     </div>
 	
 	<div id="counter-container">
-        <span id="counter">NR: 0</span>
+        <a href="https://codeshare.io/rfexam" target="_blank">Access CodeShare</a>
     </div>
 
     <script>
@@ -170,26 +170,6 @@ else {
     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
     g.async=true; g.src='https://cdn.matomo.cloud/darkintd.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
   })();
-	var numarVizitatori = 0;
-
-        // Funcție pentru a incrementa contorul și a actualiza afișajul
-        function incrementCounter() {
-            numarVizitatori++;
-            updateCounterDisplay();
-        }
-
-        // Funcție pentru a actualiza afișajul contorului
-        function updateCounterDisplay() {
-            var counterElement = document.getElementById('counter');
-            if (counterElement) {
-                counterElement.textContent = 'NR: ' + numarVizitatori;
-            }
-        }
-
-        // Incrementați contorul la încărcarea paginii
-        window.onload = function() {
-            incrementCounter();
-        };
 </script>
 </body>
 </html>
